@@ -5,16 +5,28 @@ from uuid import uuid4
 """
 
 
-class BaseModel(object):
+class BaseModel():
     """BaseModel class: parent class of all child classes
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Constructor of BaseModel
         """
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.update_at = datetime.now()
+        if (kwargs):
+            for key,value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'created_at':
+                    self.created_at = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                elif key == 'update_at':
+                    self.update_at = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                else:
+                    if (key != '__class__'):
+                        setattr(self, key, value)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.update_at = datetime.now()
 
     def __str__(self):
         """
