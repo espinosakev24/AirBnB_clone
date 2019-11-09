@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
+FileStorage module
 """
 
 
 import json
+from models.base_model import BaseModel
 import os.path
 
 class FileStorage():
@@ -21,19 +23,23 @@ class FileStorage():
         """
         """
         if obj:
-            obj_dict = obj.to_dict()
-            obj_key = obj_dict['__class__'] + '.' + obj_dict['id']
-            self.__objects[obj_key] = obj_dict
+            obj_class = type(obj).__name__
+            self.__objects.update({str(obj_class + '.' + obj.id): obj})
 
     def save(self):
         """
         """
         with open(self.__file_path, 'w') as json_file:
-            json_file.write(json.dumps(self.__objects))
+            new_dict = {}
+            for key, value in self.__objects.items():
+                new_dict.update({key: dict(value.to_dict())})
+            json_file.write(json.dumps(new_dict))
 
     def reload(self):
         """
         """
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as json_file:
-                self.__objects = json.loads(json_file.read())
+                reload_obj = json.loads(json_file.read())
+                for key, value in reload_obj.items():
+                    self.__objects.update({key: BaseModel(**value)})
