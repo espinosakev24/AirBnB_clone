@@ -5,7 +5,7 @@ FileStorage module
 
 
 import json
-from models.base_model import BaseModel
+import models
 import os.path
 
 class FileStorage():
@@ -42,4 +42,6 @@ class FileStorage():
             with open(self.__file_path, 'r') as json_file:
                 reload_obj = json.loads(json_file.read())
                 for key, value in reload_obj.items():
-                    self.__objects.update({key: BaseModel(**value)})
+                    obj_class = key.split('.')[0]
+                    obj = models.all_classes[obj_class](**value)
+                    self.__objects.update({key: obj})
