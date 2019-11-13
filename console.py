@@ -6,6 +6,7 @@ import cmd
 from datetime import datetime
 from models import all_classes
 from models import storage
+import shlex
 
 
 class HBNBCommand(cmd.Cmd):
@@ -166,12 +167,12 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
                 return
             try:
-                value_name = inputs.split(" ")[3]
+                value_name = shlex.split(inputs)[3]
             except Exception:
                 print("** value missing **")
                 return
             if atr != 'created_at' or atr != 'updated_at' or atr != 'id':
-                obj.__dict__.update({atr: value_name})
+                obj.__dict__[atr] = value_name
                 obj.save()
 
     def help_update(self):
