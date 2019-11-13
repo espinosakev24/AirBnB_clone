@@ -112,6 +112,8 @@ class HBNBCommand(cmd.Cmd):
         """
         all_objs = storage.all()
         if not(inputs):
+            if all_objs == {}:
+                print("[]")
             for key, value in all_objs.items():
                 print([str(value)])
             return
