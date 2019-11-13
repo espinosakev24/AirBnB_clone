@@ -1,4 +1,4 @@
-#!/bm/bin/python3
+#!/usr/bin/python3
 """
 Unit test for BaseModel class
 """
