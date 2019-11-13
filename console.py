@@ -28,8 +28,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints the message to the help command
         """
-        print("  This command create a new instance of BaseModel.\n"
-              "  To create an instance you can write:\n   create BaseModel")
+        print(" Create command creates a new object instance.\n"
+              "    To create an new instance type:\n    create <class_name>")
     def do_show(self, inputs):
         """ Prints the string representation of an
         instance based on the class name and id.
@@ -59,11 +59,14 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
     def help_show(self):
         """
+        Prints the help message to show command
         """
-        pass
+        print(" Show command prints the str representation of an instance.\n"
+              "    Usage:\n    show <class name> <id>")
 
     def do_destroy(self, inputs):
-        """
+        """ Destroy command deletes an instance according to
+        the object (class_name) and its id
         """
         if not(inputs):
             print("** class name missing **")
@@ -91,13 +94,16 @@ class HBNBCommand(cmd.Cmd):
             except Exception:
                 print("** class doesn't exist **")
 
-    def destroy_help(self):
+    def help_destroy(self):
         """
+        Prints the help message to destroy command
         """
-        pass
+        print(" Destroy deletes an instance based on the cls name and id).\n"
+              "    Usage:\n    destroy <class name> <id>")
 
     def do_all(self, inputs):
-        """
+        """ The command all prints all string representation
+        of all instances based or not on the class name
         """
         all_objs = storage.all()
         if not(inputs):
@@ -113,13 +119,18 @@ class HBNBCommand(cmd.Cmd):
             if key.split('.')[0] == inputs:
                 print([str(all_objs[key])])
 
-    def all_help(self):
+    def help_all(self):
         """
+        Prints the help message to all command
         """
-        pass
+        print(" Prints all string representation of all instances.\n"
+              "    Usage (1) prints all instances:\n    all\n"
+              "    Usage (2) prints class name instances:\n"
+              "    all <class name> <id>")
 
     def do_update(self, inputs):
-        """
+        """ update command updates an instance by adding or updating
+        a value according to a respective value
         """
         if not(inputs):
             print("** class name missing **")
@@ -160,8 +171,12 @@ class HBNBCommand(cmd.Cmd):
                 obj.save()
     def help_update(self):
         """
+        Prints the help message to update command
         """
-        pass
+        print(" Update command: Updates an instance based on the class name"
+              " and id by adding or updating attribute\n"
+              "    Usage:\n"
+              "    update <cls_name> <id> <attr_name> <attr_value>")
 
     def do_quit(self, inputs):
         """ Exit the console when the input is exit """
