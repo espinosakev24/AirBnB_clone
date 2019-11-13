@@ -6,6 +6,7 @@ import cmd
 from datetime import datetime
 from models import all_classes
 from models import storage
+from models.engine.file_storage import FileStorage
 import shlex
 
 
@@ -111,20 +112,24 @@ class HBNBCommand(cmd.Cmd):
         of all instances based or not on the class name
         """
         all_objs = storage.all()
+        list_obj = []
         if not(inputs):
             if all_objs == {}:
                 print("[]")
-            for key, value in all_objs.items():
-                print([str(value)])
+                return
+            for key in storage._FileStorage__objects:
+                list_obj.append(str(storage._FileStorage__objects[key]))
+            print(list_obj)
             return
         try:
             cl = all_classes[inputs]
         except Exception:
             print("** class doesn't exist **")
             return
-        for key in all_objs.keys():
+        for key in storage._FileStorage__objects:
             if key.split('.')[0] == inputs:
-                print([str(all_objs[key])])
+                list_obj.append(str(storage._FileStorage__objects[key]))
+        print(list_obj)
 
     def help_all(self):
         """
