@@ -7,7 +7,9 @@ from datetime import datetime
 from models import all_classes
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
+
     prompt = '(hbnb) '
 
     def do_create(self, inputs):
@@ -30,6 +32,7 @@ class HBNBCommand(cmd.Cmd):
         """
         print(" Create command creates a new object instance.\n"
               "    To create an new instance type:\n    create <class_name>")
+
     def do_show(self, inputs):
         """ Prints the string representation of an
         instance based on the class name and id.
@@ -57,6 +60,7 @@ class HBNBCommand(cmd.Cmd):
                         print("** no instance found **")
             except Exception:
                 print("** class doesn't exist **")
+
     def help_show(self):
         """
         Prints the help message to show command
@@ -137,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             check = 0
             try:
-                class_name = inputs.split(" ")[0]                    
+                class_name = inputs.split(" ")[0]
                 try:
                     object_id = inputs.split(" ")[1]
                 except Exception:
@@ -169,6 +173,7 @@ class HBNBCommand(cmd.Cmd):
             if atr != 'created_at' or atr != 'updated_at' or atr != 'id':
                 obj.__dict__.update({atr: value_name})
                 obj.save()
+
     def help_update(self):
         """
         Prints the help message to update command
