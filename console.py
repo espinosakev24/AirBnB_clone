@@ -45,17 +45,18 @@ class HBNBCommand(cmd.Cmd):
             check = 0
             try:
                 class_name = inputs.split(" ")[0]
-                cl = all_classes[class_name]
-                try:
-                    object_id = inputs.split(" ")[1]
-                except Exception:
-                    print("** instance id missing **")
-                    return
                 if all_classes[class_name]:
+                    cl = all_classes[class_name]
+                    try:
+                        object_id = inputs.split(" ")[1]
+                    except Exception:
+                        print("** instance id missing **")
+                        return
                     all_objs = storage.all()
                     for key in all_objs.keys():
                         obj = all_objs[key]
-                        if obj.id == object_id:
+                        cls_obj = key.split('.')[0]
+                        if obj.id == object_id and class_name == cls_obj:
                             check = 1
                             print(obj)
                     if check == 0:
@@ -80,17 +81,18 @@ class HBNBCommand(cmd.Cmd):
             check = 0
             try:
                 class_name = inputs.split(" ")[0]
-                cl = all_classes[class_name]
-                try:
-                    object_id = inputs.split(" ")[1]
-                except Exception:
-                    print("** instance id missing **")
-                    return
                 if all_classes[class_name]:
+                    cl = all_classes[class_name]
+                    try:
+                        object_id = inputs.split(" ")[1]
+                    except Exception:
+                        print("** instance id missing **")
+                        return
                     all_objs = storage.all()
                     for key in all_objs.keys():
                         obj = all_objs[key]
-                        if obj.id == object_id:
+                        cls_obj = key.split('.')[0]
+                        if obj.id == object_id and class_name == cls_obj:
                             check = 1
                             del all_objs[class_name + '.' + obj.id]
                             storage.save()
