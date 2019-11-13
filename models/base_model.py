@@ -34,7 +34,7 @@ class BaseModel():
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
-            self.update_at = datetime.now()
+            self.update_at = self.created_at
             models.storage.new(self)
 
     def __str__(self):
