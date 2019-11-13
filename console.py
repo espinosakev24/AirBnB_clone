@@ -175,8 +175,11 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
                 return
             if atr != 'created_at' or atr != 'updated_at' or atr != 'id':
-                obj.__dict__[atr] = value_name
-                obj.save()
+                if hasattr(obj, atr):
+                    setattr(obj, atr, type(getattr(obj, atr))(value_name))
+                else:
+                    obj.__dict__[atr] = value_name
+                storage.save()
 
     def help_update(self):
         """
@@ -185,7 +188,7 @@ class HBNBCommand(cmd.Cmd):
         print(" Update command: Updates an instance based on the class name"
               " and id by adding or updating attribute\n"
               "    Usage:\n"
-              "    update <cls_name> <id> <attr_name> <attr_value>")
+              "    update <cls_name> <id> <attr_name> \"<attr_value>\"")
 
     def do_quit(self, inputs):
         """ Exit the console when the input is exit """
