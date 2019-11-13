@@ -28,9 +28,9 @@ class Place(BaseModel):
         Maximum number of guest
     price_by_night: int
         Price by nigth
-    latitude: double
+    latitude: float
         Location of the place
-    longitude: double
+    longitude: float
         Location of the place
     amenity_ids: list(str)
         Amenity's id (Amenity.id)
