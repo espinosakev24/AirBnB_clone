@@ -59,7 +59,7 @@ class TestAmenity(unittest.TestCase):
         """
         self.assertIn('id', self.am.__dict__)
         self.assertIn('created_at', self.am.__dict__)
-        self.assertIn('update_at', self.am.__dict__)
+        self.assertIn('updated_at', self.am.__dict__)
         self.assertIn('name', self.am.__dict__)
         
     def test_save(self):
@@ -67,7 +67,7 @@ class TestAmenity(unittest.TestCase):
         Test to save the information of Amenity
         """
         self.am.save()
-        self.assertNotEqual(self.am.created_at, self.am.update_at)
+        self.assertNotEqual(self.am.created_at, self.am.updated_at)
         
     def test_to_dict(self):
         """
@@ -78,5 +78,5 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(self.am.__class__.__name__, 'Amenity')
         self.assertEqual(am_dict['__class__'], 'Amenity')
         self.assertIsInstance(am_dict['created_at'], str)
-        self.assertIsInstance(am_dict['update_at'], str)
+        self.assertIsInstance(am_dict['updated_at'], str)
         self.assertIsInstance(am_dict['name'], str)

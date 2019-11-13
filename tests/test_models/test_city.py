@@ -60,7 +60,7 @@ class TestCity(unittest.TestCase):
         """
         self.assertIn('id', self.ct.__dict__)
         self.assertIn('created_at', self.ct.__dict__)
-        self.assertIn('update_at', self.ct.__dict__)
+        self.assertIn('updated_at', self.ct.__dict__)
         self.assertIn('name', self.ct.__dict__)
         
     def test_save(self):
@@ -68,7 +68,7 @@ class TestCity(unittest.TestCase):
         Test to save the information of City
         """
         self.ct.save()
-        self.assertNotEqual(self.ct.created_at, self.ct.update_at)
+        self.assertNotEqual(self.ct.created_at, self.ct.updated_at)
         
     def test_to_dict(self):
         """
@@ -79,5 +79,5 @@ class TestCity(unittest.TestCase):
         self.assertEqual(self.ct.__class__.__name__, 'City')
         self.assertEqual(ct_dict['__class__'], 'City')
         self.assertIsInstance(ct_dict['created_at'], str)
-        self.assertIsInstance(ct_dict['update_at'], str)
+        self.assertIsInstance(ct_dict['updated_at'], str)
         self.assertIsInstance(ct_dict['name'], str)

@@ -69,7 +69,7 @@ class TestPlace(unittest.TestCase):
         """
         self.assertIn('id', self.pl.__dict__)
         self.assertIn('created_at', self.pl.__dict__)
-        self.assertIn('update_at', self.pl.__dict__)
+        self.assertIn('updated_at', self.pl.__dict__)
         self.assertIn('name', self.pl.__dict__)
         self.assertIn('city_id', self.pl.__dict__)
         self.assertIn('users_id', self.pl.__dict__)
@@ -87,7 +87,7 @@ class TestPlace(unittest.TestCase):
         Test to save the information of Place
         """
         self.pl.save()
-        self.assertNotEqual(self.pl.created_at, self.pl.update_at)
+        self.assertNotEqual(self.pl.created_at, self.pl.updated_at)
         
     def test_to_dict(self):
         """
@@ -98,7 +98,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(self.pl.__class__.__name__, 'Place')
         self.assertEqual(pl_dipl['__class__'], 'Place')
         self.assertIsInstance(pl_dipl['created_at'], str)
-        self.assertIsInstance(pl_dipl['update_at'], str)
+        self.assertIsInstance(pl_dipl['updated_at'], str)
         self.assertIsInstance(pl_dipl['name'], str)
         self.assertIsInstance(pl_dipl['number_rooms'], int)
         self.assertIsInstance(pl_dipl['number_bathrooms'], int)

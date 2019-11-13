@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
         """
         self.assertIn('id', self.usr.__dict__)
         self.assertIn('created_at', self.usr.__dict__)
-        self.assertIn('update_at', self.usr.__dict__)
+        self.assertIn('updated_at', self.usr.__dict__)
         self.assertIn('email', self.usr.__dict__)
         self.assertIn('password', self.usr.__dict__)
         self.assertIn('last_name', self.usr.__dict__)
@@ -73,7 +73,7 @@ class TestUser(unittest.TestCase):
         Test to save the information of User
         """
         self.usr.save()
-        self.assertNotEqual(self.usr.created_at, self.usr.update_at)
+        self.assertNotEqual(self.usr.created_at, self.usr.updated_at)
         
     def test_to_dict(self):
         """
@@ -84,7 +84,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.usr.__class__.__name__, 'User')
         self.assertEqual(usr_dict['__class__'], 'User')
         self.assertIsInstance(usr_dict['created_at'], str)
-        self.assertIsInstance(usr_dict['update_at'], str)
+        self.assertIsInstance(usr_dict['updated_at'], str)
         self.assertIsInstance(usr_dict['email'], str)
         self.assertIsInstance(usr_dict['password'], str)
         self.assertIsInstance(usr_dict['last_name'], str)

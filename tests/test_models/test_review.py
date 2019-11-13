@@ -59,7 +59,7 @@ class TestReview(unittest.TestCase):
         """
         self.assertIn('id', self.rev.__dict__)
         self.assertIn('created_at', self.rev.__dict__)
-        self.assertIn('update_at', self.rev.__dict__)
+        self.assertIn('updated_at', self.rev.__dict__)
         self.assertIn('text', self.rev.__dict__)
         
     def test_save(self):
@@ -67,7 +67,7 @@ class TestReview(unittest.TestCase):
         Test to save the information of Review
         """
         self.rev.save()
-        self.assertNotEqual(self.rev.created_at, self.rev.update_at)
+        self.assertNotEqual(self.rev.created_at, self.rev.updated_at)
         
     def test_to_dict(self):
         """
@@ -78,5 +78,5 @@ class TestReview(unittest.TestCase):
         self.assertEqual(self.rev.__class__.__name__, 'Review')
         self.assertEqual(rev_direv['__class__'], 'Review')
         self.assertIsInstance(rev_direv['created_at'], str)
-        self.assertIsInstance(rev_direv['update_at'], str)
+        self.assertIsInstance(rev_direv['updated_at'], str)
         self.assertIsInstance(rev_direv['text'], str)

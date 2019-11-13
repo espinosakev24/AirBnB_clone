@@ -166,7 +166,7 @@ class HBNBCommand(cmd.Cmd):
             except Exception:
                 print("** value missing **")
                 return
-            if atr != 'created_at' or atr != 'update_at' or atr != 'id':
+            if atr != 'created_at' or atr != 'updated_at' or atr != 'id':
                 obj.__dict__.update({atr: value_name})
                 obj.save()
     def help_update(self):

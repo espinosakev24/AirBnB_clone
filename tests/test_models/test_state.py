@@ -59,7 +59,7 @@ class TestState(unittest.TestCase):
         """
         self.assertIn('id', self.st.__dict__)
         self.assertIn('created_at', self.st.__dict__)
-        self.assertIn('update_at', self.st.__dict__)
+        self.assertIn('updated_at', self.st.__dict__)
         self.assertIn('name', self.st.__dict__)
         
     def test_save(self):
@@ -67,7 +67,7 @@ class TestState(unittest.TestCase):
         Test to save the information of State
         """
         self.st.save()
-        self.assertNotEqual(self.st.created_at, self.st.update_at)
+        self.assertNotEqual(self.st.created_at, self.st.updated_at)
         
     def test_to_dict(self):
         """
@@ -78,5 +78,5 @@ class TestState(unittest.TestCase):
         self.assertEqual(self.st.__class__.__name__, 'State')
         self.assertEqual(st_dict['__class__'], 'State')
         self.assertIsInstance(st_dict['created_at'], str)
-        self.assertIsInstance(st_dict['update_at'], str)
+        self.assertIsInstance(st_dict['updated_at'], str)
         self.assertIsInstance(st_dict['name'], str)

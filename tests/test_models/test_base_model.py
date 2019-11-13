@@ -72,7 +72,7 @@ class TestBaseModel(unittest.TestCase):
         """
         self.assertIn('id', self.bm.__dict__)
         self.assertIn('created_at', self.bm.__dict__)
-        self.assertIn('update_at', self.bm.__dict__)
+        self.assertIn('updated_at', self.bm.__dict__)
         self.assertTrue(self.bm.id)
 
     def test_init(self):
@@ -86,7 +86,7 @@ class TestBaseModel(unittest.TestCase):
         Test to save the information of BaseModel
         """
         self.bm.save()
-        self.assertNotEqual(self.bm.created_at, self.bm.update_at)
+        self.assertNotEqual(self.bm.created_at, self.bm.updated_at)
         
     def test_to_dict(self):
         """
@@ -95,4 +95,4 @@ class TestBaseModel(unittest.TestCase):
         bm_dict = self.bm.to_dict()
         self.assertEqual(self.bm.__class__.__name__, 'BaseModel')
         self.assertIsInstance(bm_dict['created_at'], str)
-        self.assertIsInstance(bm_dict['update_at'], str)
+        self.assertIsInstance(bm_dict['updated_at'], str)

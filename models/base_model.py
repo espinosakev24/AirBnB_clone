@@ -25,8 +25,8 @@ class BaseModel():
                 elif key == 'created_at':
                     self.created_at = datetime.strptime(value,
                                                         '%Y-%m-%dT%H:%M:%S.%f')
-                elif key == 'update_at':
-                    self.update_at = datetime.strptime(value,
+                elif key == 'updated_at':
+                    self.updated_at = datetime.strptime(value,
                                                        '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     if (key != '__class__'):
@@ -34,7 +34,7 @@ class BaseModel():
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
-            self.update_at = self.created_at
+            self.updated_at = self.created_at
             models.storage.new(self)
 
     def __str__(self):
@@ -49,7 +49,7 @@ class BaseModel():
         Method that updates the public instance attribute updated_at with the
         current datetime and send to save in a JSON file
         """
-        self.update_at = datetime.now()
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
@@ -60,5 +60,5 @@ class BaseModel():
         class_dict = self.__dict__.copy()
         class_dict.update({'__class__': self.__class__.__name__})
         class_dict.update({'created_at': datetime.isoformat(self.created_at)})
-        class_dict.update({'update_at': datetime.isoformat(self.update_at)})
+        class_dict.update({'updated_at': datetime.isoformat(self.updated_at)})
         return class_dict
