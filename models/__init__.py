@@ -9,7 +9,7 @@ from models.state import State
 from models.user import User
 
 all_classes = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
-			   "Place": Place, "Review": Review, "State": State, "User": User}
+               "Place": Place, "Review": Review, "State": State, "User": User}
 
 
 storage = FileStorage()
