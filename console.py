@@ -145,12 +145,12 @@ class HBNBCommand(cmd.Cmd):
             check = 0
             try:
                 class_name = inputs.split(" ")[0]
-                try:
-                    object_id = inputs.split(" ")[1]
-                except Exception:
-                    print("** instance id missing **")
-                    return
                 if all_classes[class_name]:
+                    try:
+                        object_id = inputs.split(" ")[1]
+                    except Exception:
+                        print("** instance id missing **")
+                        return
                     all_objs = storage.all()
                     for key in all_objs.keys():
                         obj = all_objs[key]
@@ -158,6 +158,7 @@ class HBNBCommand(cmd.Cmd):
                             check = 1
                     if check == 0:
                         print("** no instance found **")
+                        return
             except Exception:
                 print("** class doesn't exist **")
                 return
@@ -198,7 +199,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, inputs):
         """ Exit the console when the input is Ctr+D """
-        print()
         return True
 
     def help_EOF(self):
