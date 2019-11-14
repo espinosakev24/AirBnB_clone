@@ -1,4 +1,4 @@
-![hbnb](https://s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191114T014442Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5b650757c3318633beff0f8f7fb99ea6fceca368b6dd70ed956fa94e86892be9)
+![hbnb](https://l.facebook.com/l.php?u=https%3A%2F%2Frails-assets.holbertonschool.com%2Fassets%2Flogos%2Fholberton-school-logo_tablet-1-04810483bf8b1cf6eb253405d5b35dbed5fd303a896eba7f9b2d53c7d4690fe5.png%3Ffbclid%3DIwAR3JjbF4SmgAfPLqln9Af0m2hgzWzwnGPlctbEzJMus_Yn3BwZObmklr18E&h=AT14C_Y1NpwC7c8yRxVMflB7oncX3e68j_695PuMGYByLCZSs1kd81mIfeKZr6CZjd2M7c6_Y99ZuJ8g9zMB3589NYiYPx7q5wideEMMUhJZJaXCooX1ni4JamaCXPvDh1rcmQ)
 
 # Airbnb Clone Console
 
@@ -10,7 +10,7 @@
 * [Installation](https://github.com/espinosakev24/AirBnB_clone#installation)
 * [Requirements](https://github.com/espinosakev24/AirBnB_clone#requirements)
 * [Example Commands](https://github.com/espinosakev24/AirBnB_clone#example-commands)
-* [Build with](https://github.com/espinosakev24/AirBnB_clone#buildwith)
+* [Build with](https://github.com/espinosakev24/AirBnB_clone#build-with)
 * [Authors](https://github.com/espinosakev24/AirBnB_clone#authors)
 ---
 
@@ -101,9 +101,9 @@ git clone https://github.com/espinosakev24/AirBnB_clone.git
 ---
 
 ### Requirements
-_The console was built and tested in Ubuntu 14.04 LTS, interpreted/compiled using python3 (version 3.4.3)_
-_All the tests should be executed by using this command:_ `python3 -m unittest discover tests`
-_Also you can test file by file by using this command:_ `python3 -m unittest tests/test_models/test_base_model.py`
+<p>The console was built and tested in Ubuntu 14.04 LTS, interpreted/compiled using python3 (version 3.4.3)</p>
+<p>_All the tests should be executed by using this command:_ `python3 -m unittest discover tests`</p>
+<p>_Also you can test file by file by using this command:_ `python3 -m unittest tests/test_models/test_base_model.py`</p>
 ---
 
 ### Example Commands
@@ -185,7 +185,7 @@ $
 ```
 ---
 
-### Build whith
+### Build with
 * [Python3](https://www.python.org/): Language builded
 * [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/): Operative System
 * [PEP8](https://www.python.org/dev/peps/pep-0008/): Style guide for Python code in ver. 1.7
