@@ -1,4 +1,4 @@
-![hbnb](https://l.facebook.com/l.php?u=https%3A%2F%2Frails-assets.holbertonschool.com%2Fassets%2Flogos%2Fholberton-school-logo_tablet-1-04810483bf8b1cf6eb253405d5b35dbed5fd303a896eba7f9b2d53c7d4690fe5.png%3Ffbclid%3DIwAR3JjbF4SmgAfPLqln9Af0m2hgzWzwnGPlctbEzJMus_Yn3BwZObmklr18E&h=AT14C_Y1NpwC7c8yRxVMflB7oncX3e68j_695PuMGYByLCZSs1kd81mIfeKZr6CZjd2M7c6_Y99ZuJ8g9zMB3589NYiYPx7q5wideEMMUhJZJaXCooX1ni4JamaCXPvDh1rcmQ)
+![hbnb](https://rails-assets.holbertonschool.com/assets/logos/holberton-school-logo_tablet-1-04810483bf8b1cf6eb253405d5b35dbed5fd303a896eba7f9b2d53c7d4690fe5.png)
 
 # Airbnb Clone Console
 
