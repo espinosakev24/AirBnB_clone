@@ -23,10 +23,9 @@ In the next few months, we at [Holberton School](https://www.holbertonschool.com
 * Web framework - templating
 * RESTful API
 * Web dynamic
-![hbhb-full](https://s3.amazonaws.com/uploads/medias/2018/6/d2d06462824fab5846f3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191114T011116Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9c676c5a19d36d8a2e50492d9ce918b4968f6cdfa0b17db8194a38b991d4a535)
 <p><img src="https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step5.png" alt="Technology" width="629" height="335"></p>
 In this repository we face the first part: The console, this is the first step towards building our first full web application: the AirBnB clone. In this part we created a command interpreter to manipulate data without a visual interface and we create and manage our first Store Engine.
-<p><img src="https://s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191114T014442Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0f8f9bad3bd814f09467a662b80463f000d450f96a61860e6ff3f2e63adc4684">
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step1.png" width="629" height="335"></p>
 
 ---
 
