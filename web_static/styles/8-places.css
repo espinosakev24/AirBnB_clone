@@ -74,3 +74,6 @@ article .information {
 article {
 	z-index: -1;
 }
+article > .user > p{
+	text-align: left;
+}
