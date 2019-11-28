@@ -22,11 +22,11 @@
 .filters button:hover {
 	opacity: 90%;
 }
-.locations {
+.filters > .locations {
 	border-right: 1px solid  #DDDDDD;
 }
-.locations,
-.amenities {
+.filters > .locations,
+.filters > .amenities {
 	height: 100%;
 	width: 25%;
 	position: relative;
